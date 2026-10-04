@@ -87,11 +87,11 @@ Common options:
 
 `--verify` rasterises the produced SVG with headless Chrome at the exact output
 size and reports intersection-over-union against the source mask. Correct traces
-land around **0.98**; anything below ~0.9 means the mask or threshold is wrong.
+land around **0.97–0.99**; anything below ~0.9 means the mask or threshold is wrong.
 
 ```sh
 $ img2svg emblem.jpg --crop 184,100,852,810 --fill '#393e41' --verify
-wrote emblem.svg | 1 path(s) | 386 points | viewBox 184 102 667 705 | threshold 145 | IoU 0.9838
+wrote emblem.svg | 1 path(s) | 390 points | viewBox 184 102 667 705 | threshold 145 | IoU 0.9716
 ```
 
 ## Tips
