@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "img2svg"
+version = "1.0.0"
+description = "Convert raster images (PNG/JPEG/WebP) into clean SVG vectors using pixel-crack contour tracing. No potrace, no Python imaging libraries."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+img2svg = "img2svg.cli:main"
+
+[tool.setuptools]
+packages = ["img2svg"]
