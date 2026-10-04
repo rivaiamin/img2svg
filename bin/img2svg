@@ -1,0 +1,13 @@
+#!/bin/sh
+# Launcher for the img2svg package without installing it.
+# Resolves symlinks so ~/.local/bin/img2svg -> checkout still finds the package.
+self=$0
+while [ -L "$self" ]; do
+    link=$(readlink "$self")
+    case $link in
+        /*) self=$link ;;
+        *) self=$(dirname "$self")/$link ;;
+    esac
+done
+here=$(CDPATH= cd -- "$(dirname -- "$self")/.." && pwd)
+PYTHONPATH="$here${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m img2svg "$@"
